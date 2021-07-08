@@ -142,12 +142,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Card.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="OOP_HW-3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
+    <ClInclude Include="Card.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Fraction.h" />
   </ItemGroup>

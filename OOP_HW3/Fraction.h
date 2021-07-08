@@ -1,4 +1,10 @@
 #pragma once
+#include <string>
+#include <iostream>
+#include <numeric>
+
+
+using namespace std;
 
 class Fraction
 {
@@ -9,6 +15,7 @@ public:
 	Fraction();
 	Fraction(int n, int d);
 
+	string getFraction() const;
 	Fraction operator+(Fraction& b) const;
 	Fraction operator-(Fraction& b) const;
 	Fraction operator*(Fraction& b) const;
@@ -16,6 +23,12 @@ public:
 
 	Fraction operator-() const;
 
+	bool operator==(Fraction& b) const;
+	bool operator!=(Fraction& b) const;
+	bool operator>(Fraction& b) const;
+	bool operator<=(Fraction& b) const;
+	bool operator<(Fraction& b) const;
+	bool operator>=(Fraction& b) const;
 
 };
 

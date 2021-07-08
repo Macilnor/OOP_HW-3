@@ -1,7 +1,4 @@
 #include "Fraction.h"
-#include <numeric>
-
-using namespace std;
 
 Fraction::Fraction() : numerator(1), denominator(1)
 {
@@ -13,6 +10,12 @@ Fraction::Fraction(int n, int d) : numerator(n), denominator(d)
 	{
 		denominator = 1;
 	}
+}
+
+string Fraction::getFraction() const
+{
+	string out = to_string(numerator) + "/" + to_string(denominator);
+	return out;
 }
 
 Fraction Fraction::operator+(Fraction& b) const
@@ -47,3 +50,49 @@ Fraction Fraction::operator-() const
 {
 	return Fraction(-numerator, denominator);
 }
+
+bool Fraction::operator==(Fraction& b) const
+{
+	int d = lcm(denominator, b.denominator);
+	if (numerator * (d / denominator) == b.numerator * (d / b.denominator))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool Fraction::operator!=(Fraction& b) const
+{
+	return !(*this == b);
+}
+
+bool Fraction::operator>(Fraction& b) const
+{
+	int d = lcm(denominator, b.denominator);
+	if (numerator * (d / denominator) > b.numerator * (d / b.denominator))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool Fraction::operator<=(Fraction& b) const
+{
+	return !(*this > b);
+}
+
+bool Fraction::operator<(Fraction& b) const
+{
+	int d = lcm(denominator, b.denominator);
+	if (numerator * (d / denominator) < b.numerator * (d / b.denominator))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool Fraction::operator>=(Fraction& b) const
+{
+	return !(*this < b);
+}
+

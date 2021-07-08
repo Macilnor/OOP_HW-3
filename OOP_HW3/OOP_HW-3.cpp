@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Figure.h"
 #include "Car.h"
+#include "Fraction.h"
+#include "Card.h"
 
 using namespace std;
 
@@ -30,6 +32,37 @@ int main()
 
     Minivan mini;
 
+    Fraction a(1, 4);
+    Fraction b(2, 8);
+    Fraction c(2, 3);
+
+    string out = (a == b) ? " True " : " False ";
+    cout << " 1/4 == 2/8 : " << out << endl;
+
+    out = (a != c) ? " True " : " False ";
+    cout << " 1/4 != 2/3 : " << out << endl;
+
+    out = (a > c) ? " True " : " False ";
+    cout << " 1/4 > 2/3 : " << out << endl;
+
+    out = (a <= b) ? " True " : " False ";
+    cout << " 1/4 <= 2/8 : " << out << endl;
+
+    out = (c < b) ? " True " : " False ";
+    cout << " 2/3 < 2/8 : " << out << endl;
+
+    out = (a >= c) ? " True " : " False ";
+    cout << " 1/4 >= 2/3 : " << out << endl;
+
+
+    cout << " 1/4 + 2/3 = " << (a + c).getFraction() << endl;
+    cout << " 2/3 - 2/8 = " << (c - b).getFraction() << endl;
+    cout << " 1/4 * 2/8 = " << (a * b).getFraction() << endl;
+    cout << " 1/4 / 2/3 = " << (a / c).getFraction() << endl;
+
+    Card card(S_PIKES, R_QUEEN);
+    card.Flip();
+    cout << card.getValue();
 }
 
 
